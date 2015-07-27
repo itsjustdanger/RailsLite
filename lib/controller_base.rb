@@ -25,6 +25,7 @@ class ControllerBase
     @res.content_type = content_type
     @res.body = content
 
+    session.store_session(@res)
     @already_built_response = true
   end
 
