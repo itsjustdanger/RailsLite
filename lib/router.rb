@@ -57,4 +57,14 @@ class Router
   def match(req)
     @routes.find { |r| r.matches?(req) }
   end
+
+  def run(req, res)
+    matched_route = match(req)
+    if matched_route
+      res.status = 200
+      matched_route.run(req, res)
+    else
+      res.status = 404
+    end
+  end
 end
