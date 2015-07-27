@@ -1,9 +1,18 @@
+require 'active_support'
+require 'active_support/inflector'
+require 'active_support/core_ext'
+require 'erb'
+
 class ControllerBase
   attr_reader :req, :res
 
   def initialize(req, res)
     @req = req
     @res = res
+  end
+
+  def session
+    @session ||= Session.new(@req)
   end
 
   def already_built_response?
