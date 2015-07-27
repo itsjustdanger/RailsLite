@@ -2,9 +2,10 @@ require 'uri'
 
 class Params
 
-  def initialize(req)
+  def initialize(req, route_params = {})
     @params = {}
 
+    @params.merge!(route_params)
   end
 
   def [](key)
