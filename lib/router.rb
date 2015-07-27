@@ -31,3 +31,12 @@ class Route
     controller.invoke_action(action_name)
   end
 end
+
+class Router
+  attr_reader :routes
+
+  def initialize
+    @routes = []
+  end
+
+end
