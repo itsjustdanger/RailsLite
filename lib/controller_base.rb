@@ -7,7 +7,7 @@ class ControllerBase
   end
 
   def already_built_response?
-    @already_build_response
+    @already_built_response
   end
 
   def render_content(content, content_type)
