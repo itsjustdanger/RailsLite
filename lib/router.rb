@@ -10,6 +10,16 @@ class Route
   end
 
 
+  def matches?(req)
+    if http_method.downcase.to_sym != req.request_method
+      return false
+    elsif !pattern.match(req.path)
+      return false
+    end
+
+    true
+  end
+
   def run(req, res)
     route_params = {}
     match_data = pattern.match(req.path)
