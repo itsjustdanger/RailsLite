@@ -6,7 +6,7 @@ class Flash
     @flashes = flashes.stringify_keys
     @now = nil
   end
-  
+
   def [](key)
     @flashes[key.to_s]
   end
