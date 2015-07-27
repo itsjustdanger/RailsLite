@@ -45,4 +45,16 @@ class Router
     end
   end
 
+  def draw(&proc)
+    self.instance_eval do
+    end
+  end
+
+  def add_route(pattern, method, controller_class, action_name)
+    @routes << Route.new(pattern, method, controller_class, action_name)
+  end
+
+  def match(req)
+    @routes.find { |r| r.matches?(req) }
+  end
 end
