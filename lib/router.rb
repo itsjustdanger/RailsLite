@@ -1,6 +1,6 @@
-class Router
+class Route
 
-  attr_reader
+  attr_reader :pattern, :http_method, :controller_class, :action_name
 
   def initialize(pattern, http_method, controller_class, action_name)
     @pattern = pattern
@@ -9,6 +9,6 @@ class Router
     @action_name = action_name
   end
 
-  
+
 
 end
